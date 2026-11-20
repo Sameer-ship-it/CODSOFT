@@ -1,51 +1,55 @@
-# CodSoft Machine Learning Internship Projects
+# Machine Learning Internship Projects
 
-A collection of three Jupyter notebooks exploring supervised learning and text classification as part of a CodSoft internship.
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Notebooks-Jupyter-F37626?logo=jupyter&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/ML-scikit--learn-F7931E?logo=scikitlearn&logoColor=white)
+![Project type](https://img.shields.io/badge/Status-Learning%20projects-informational)
+
+A portfolio of three notebook-based classification exercises completed during a CodSoft machine-learning internship. The work covers customer churn, credit-card fraud, and SMS spam, with emphasis on preprocessing, model comparison, and evaluation.
 
 ## Projects
 
-| Notebook | Topic | Techniques explored |
+| Notebook | Problem | Methods explored |
 | --- | --- | --- |
-| `TSK1.ipynb` | Customer churn prediction | Categorical encoding, train/test split, scaling, Logistic Regression, Random Forest, and XGBoost |
-| `TSK2.ipynb` | Credit-card fraud classification | Categorical encoding, feature scaling, Logistic Regression, Decision Tree, and Random Forest |
-| `TSK3.ipynb` | SMS spam classification | TF-IDF features with Multinomial Naive Bayes and Logistic Regression |
+| [TSK1.ipynb](TSK1.ipynb) | Customer churn prediction | Categorical encoding, scaling, Logistic Regression, Random Forest, XGBoost |
+| [TSK2.ipynb](TSK2.ipynb) | Credit-card fraud classification | Encoding, feature scaling, Logistic Regression, Decision Tree, Random Forest |
+| [TSK3.ipynb](TSK3.ipynb) | SMS spam classification | Text preprocessing, TF-IDF, Multinomial Naive Bayes, Logistic Regression |
 
-These notebooks are experiments for learning and comparison. Their results depend on the datasets and the preprocessing choices in each notebook.
+## Workflow
 
-## Data
-
-The notebooks expect datasets that are not stored in this repository. Some cells refer to files in a local Windows Downloads folder. Download a dataset you are authorized to use, update the relevant `read_csv` path, and avoid committing private or licensed data.
-
-## Run the notebooks
-
-```bash
-git clone https://github.com/Sameer-ship-it/CODSOFT.git
-cd CODSOFT
-python -m venv .venv
+```mermaid
+flowchart LR
+    A[Authorized dataset] --> B[Explore and clean]
+    B --> C[Prepare features]
+    C --> D[Train candidate models]
+    D --> E[Compare evaluation metrics]
+    E --> F[Document observations]
 ```
 
-Activate the environment, then install Jupyter and the libraries used by the notebooks:
+The notebooks are learning experiments. Their results depend on the input data, preprocessing, and split strategy; no performance claim is made here.
+
+## Run locally
+
+The notebooks expect external datasets that are not included. Update each notebook's `read_csv` path to point to a dataset you are authorized to use. Do not commit private or licensed data.
 
 ```bash
-# Windows PowerShell
+ git clone https://github.com/Sameer-ship-it/CODSOFT.git
+ cd CODSOFT
+ python -m venv .venv
+```
+
+Activate the environment, then install the notebook dependencies:
+
+```powershell
 .venv\Scripts\Activate.ps1
-# macOS / Linux
-source .venv/bin/activate
-```
-
-```bash
 python -m pip install jupyter pandas numpy scikit-learn matplotlib seaborn xgboost category-encoders
 jupyter notebook
 ```
 
-Open a notebook and run its cells after configuring the dataset path. Notebooks may need package or data-path adjustments for your environment.
+On macOS or Linux, activate with `source .venv/bin/activate`.
 
 ## Notes
 
-- The work is educational and is not a production fraud, churn, or messaging detection service.
-- For imbalanced classification, review precision, recall, F1 score, and the confusion matrix rather than relying on accuracy alone.
-- Review dataset licenses and remove personal identifiers before sharing data.
-
-## Author
-
-[Sameer Raza](https://github.com/Sameer-ship-it)
+- These are educational notebooks, not production fraud, churn, or spam detection systems.
+- For imbalanced datasets, review precision, recall, F1 score, and the confusion matrix alongside accuracy.
+- Check dataset licensing and remove personal identifiers before sharing results.
